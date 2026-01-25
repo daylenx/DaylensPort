@@ -62,9 +62,9 @@ const resumeItems = [
   },
   {
     type: "education",
-    title: "Computer Science Degree",
-    subtitle: "Bachelor's in Computer Science",
-    description: "Strong foundation in software engineering, data structures, algorithms, and modern development practices.",
+    title: "Bachelor of Science in Computer Science",
+    subtitle: "Florida A&M University • Tallahassee, FL • Spring '25",
+    description: "Strong foundation in software engineering, data structures, algorithms, and modern development practices. Active member of NSBE (National Society of Black Engineers), BDPA (Black Data Processing Associates), and ACM (Association for Computing Machinery).",
   },
   {
     type: "experience",
@@ -282,8 +282,8 @@ export default function Home() {
               <motion.div variants={fadeInUp}>
                 <div className="space-y-6 text-muted-foreground" data-testid="text-about-content">
                   <p className="text-lg leading-relaxed">
-                    I'm a computer science graduate and software developer with a strong interest
-                    in building practical, user-focused applications.
+                    I'm a recent Florida A&M University graduate with a Bachelor's in Computer Science
+                    and a strong interest in building practical, user-focused applications.
                   </p>
                   <p className="leading-relaxed">
                     I enjoy working on projects that combine clean design with solid engineering,
@@ -298,9 +298,9 @@ export default function Home() {
                     why a solution works — not just making something function.
                   </p>
                   <p className="leading-relaxed">
-                    Outside of coding, I'm always learning, refining past projects, and exploring
-                    ways technology can be used more effectively. I see software development as a
-                    craft that improves through iteration, curiosity, and real-world problem solving.
+                    During my time at FAMU, I was actively involved in NSBE, BDPA, and ACM — communities
+                    that helped me grow both technically and professionally. Outside of coding, you'll
+                    find me watching football or gaming on Xbox.
                   </p>
                 </div>
               </motion.div>
