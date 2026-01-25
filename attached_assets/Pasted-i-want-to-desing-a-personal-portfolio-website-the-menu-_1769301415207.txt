@@ -1,0 +1,49 @@
+i want to desing a personal portfolio website. 
+
+the menu bar should have an: 
+
+about me - I’m a computer science graduate and software developer with a strong interest in building practical, user-focused applications.
+
+I enjoy working on projects that combine clean design with solid engineering, especially web applications that solve real problems. Most of my experience comes from hands-on projects where I’ve designed features, structured data, and built full applications from the ground up.
+
+I’m especially interested in frontend and full-stack development, and I like working with modern tools such as React, TypeScript, and Firebase. I care a lot about writing readable code, thinking through edge cases, and understanding why a solution works — not just making something function.
+
+Outside of coding, I’m always learning, refining past projects, and exploring ways technology can be used more effectively. I see software development as a craft that improves through iteration, curiosity, and real-world problem solving.
+
+projects - DriveIQ - DriveIQ is a vehicle maintenance tracking web application designed to help users stay on top of service schedules and vehicle health without relying on memory or paper records.
+
+The app allows users to manage one or multiple vehicles, log maintenance and service history, and track important details such as mileage, service dates, notes, and costs. DriveIQ is built with scalability in mind, making it suitable for individual drivers, families, or small fleets.
+
+The goal of DriveIQ is simple: reduce missed maintenance, improve vehicle longevity, and give users a clear view of their vehicle history in one place.
+
+Key features include:
+
+Multi-vehicle management
+
+Maintenance and service logging
+
+Odometer tracking
+
+Clean, dashboard-style interface
+
+Scalable architecture for future features
+
+DriveIQ was built as a full web application using modern development practices and serves as a real-world example of my approach to building practical, user-focused software. 
+
+link to driveiq - https://github.com/daylenx/DriveIQ
+
+link to my GitHub - https://github.com/daylenx
+
+link to my linkedin - https://www.linkedin.com/in/daylen-hall/
+
+resume - 
+
+contact - number: 3178097510 email: daylen25147@gmail.com
+
+work with me (to build you a custom website) 
+	services i offer: 
+		- starter website $400
+		- business website $800
+		- landing page $300
+		- web application $1500
+		- portfolio / personal brand $300 
