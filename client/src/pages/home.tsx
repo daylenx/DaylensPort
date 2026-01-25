@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { contactMessageSchema, type ContactMessage } from "@shared/schema";
+import driveIQScreenshot from "@assets/image_1769337265421.png";
 import {
   Menu,
   X,
@@ -391,21 +392,35 @@ export default function Home() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <p className="text-muted-foreground text-lg leading-relaxed" data-testid="text-project-description">
-                    DriveIQ is a vehicle maintenance tracking web application designed to help users
-                    stay on top of service schedules and vehicle health without relying on memory or
-                    paper records.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    The app allows users to manage one or multiple vehicles, log maintenance and
-                    service history, and track important details such as mileage, service dates,
-                    notes, and costs. DriveIQ is built with scalability in mind, making it suitable
-                    for individual drivers, families, or small fleets.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    The goal of DriveIQ is simple: reduce missed maintenance, improve vehicle
-                    longevity, and give users a clear view of their vehicle history in one place.
-                  </p>
+                  <div className="grid md:grid-cols-2 gap-8 items-start">
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground text-lg leading-relaxed" data-testid="text-project-description">
+                        DriveIQ is a vehicle maintenance tracking web application designed to help users
+                        stay on top of service schedules and vehicle health without relying on memory or
+                        paper records.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        The app allows users to manage one or multiple vehicles, log maintenance and
+                        service history, and track important details such as mileage, service dates,
+                        notes, and costs. DriveIQ is built with scalability in mind, making it suitable
+                        for individual drivers, families, or small fleets.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        The goal of DriveIQ is simple: reduce missed maintenance, improve vehicle
+                        longevity, and give users a clear view of their vehicle history in one place.
+                      </p>
+                    </div>
+                    <div className="flex justify-center">
+                      <div className="relative max-w-[280px] rounded-2xl overflow-hidden shadow-xl border border-border">
+                        <img 
+                          src={driveIQScreenshot} 
+                          alt="DriveIQ Vehicle Details Screen" 
+                          className="w-full h-auto"
+                          data-testid="img-driveiq-screenshot"
+                        />
+                      </div>
+                    </div>
+                  </div>
 
                   <div>
                     <h4 className="font-semibold text-foreground mb-3">Key Features</h4>
