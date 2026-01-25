@@ -54,6 +54,12 @@ const services = [
 
 const resumeItems = [
   {
+    type: "experience",
+    title: "Research Intern, Digital Forensics & A.I.",
+    subtitle: "Northrop Grumman • Tallahassee, FL • Aug '23 - Aug '24",
+    description: "Conducted forensic analysis using Autopsy to extract file metadata, thumbnail fragments, and hidden headers. Applied YOLOv7 object detection to real-world dashcam data to flag seatbelt usage and classify objects. Detected safety violations in 10,000+ video frames, reducing false-positive rate by 25%.",
+  },
+  {
     type: "education",
     title: "Computer Science Degree",
     subtitle: "Bachelor's in Computer Science",
