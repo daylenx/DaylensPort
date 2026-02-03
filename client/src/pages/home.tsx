@@ -46,11 +46,33 @@ const skills = [
 ];
 
 const services = [
-  { id: "starter", name: "Starter Website", price: "$400", description: "Perfect for individuals or small projects needing a simple, professional online presence." },
-  { id: "business", name: "Business Website", price: "$800", description: "Comprehensive solution for businesses requiring multiple pages, contact forms, and modern design." },
-  { id: "landing", name: "Landing Page", price: "$300", description: "High-converting single page designed to capture leads and showcase your offering." },
-  { id: "webapp", name: "Web Application", price: "$1500", description: "Full-featured custom web application with database, authentication, and advanced functionality." },
-  { id: "portfolio", name: "Portfolio / Personal Brand", price: "$300", description: "Showcase your work and build your personal brand with a stunning portfolio site." },
+  { 
+    id: "lite", 
+    name: "Lite Site", 
+    price: "$150–$250", 
+    timeline: "2–4 days",
+    forWho: "Hobbyists, side hustles, students",
+    description: "Perfect 1-page site with intro, products/services, and contact sections. Mobile responsive with simple, clean design. Deployed and live.",
+    features: ["1-page site", "Mobile responsive", "Simple design", "Deployed + live"],
+  },
+  { 
+    id: "business", 
+    name: "Starter / Business Site", 
+    price: "$500–$900", 
+    timeline: "1–2 weeks",
+    forWho: "Small businesses",
+    description: "Comprehensive 3–5 page website with custom layout, contact form, SEO basics, and domain + hosting setup included.",
+    features: ["3–5 pages", "Custom layout", "Contact form", "SEO basics", "Domain + hosting setup"],
+  },
+  { 
+    id: "webapp", 
+    name: "Web App / Custom Build", 
+    price: "$1,500+", 
+    timeline: "3+ weeks",
+    forWho: "Startups, internal tools",
+    description: "Full-featured React application with authentication, dashboards, API integrations, and scalable architecture built for growth.",
+    features: ["React app", "Auth / dashboards", "APIs / backend", "Scalable architecture"],
+  },
 ];
 
 const resumeItems = [
@@ -519,15 +541,29 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
               {services.map((service) => (
-                <Card key={service.id} className="overflow-visible hover-elevate" data-testid={`card-service-${service.id}`}>
-                  <CardHeader>
-                    <CardTitle className="text-lg" data-testid={`text-service-name-${service.id}`}>{service.name}</CardTitle>
-                    <div className="text-3xl font-bold text-primary" data-testid={`text-service-price-${service.id}`}>{service.price}</div>
+                <Card key={service.id} className="overflow-visible hover-elevate flex flex-col" data-testid={`card-service-${service.id}`}>
+                  <CardHeader className="pb-4">
+                    <Badge variant="secondary" className="w-fit mb-2 text-xs" data-testid={`badge-service-for-${service.id}`}>
+                      {service.forWho}
+                    </Badge>
+                    <CardTitle className="text-xl" data-testid={`text-service-name-${service.id}`}>{service.name}</CardTitle>
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span className="text-3xl font-bold text-primary" data-testid={`text-service-price-${service.id}`}>{service.price}</span>
+                      <span className="text-sm text-muted-foreground">• {service.timeline}</span>
+                    </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-1 space-y-4">
                     <p className="text-muted-foreground text-sm" data-testid={`text-service-desc-${service.id}`}>{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm">
+                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               ))}
