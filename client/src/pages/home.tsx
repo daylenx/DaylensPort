@@ -49,7 +49,7 @@ const services = [
   { 
     id: "lite", 
     name: "Lite Site", 
-    price: "$150–$250", 
+    price: "$200", 
     timeline: "2–4 days",
     forWho: "Hobbyists, side hustles, students",
     description: "Perfect 1-page site with intro, products/services, and contact sections. Mobile responsive with simple, clean design. Deployed and live.",
@@ -58,7 +58,7 @@ const services = [
   { 
     id: "business", 
     name: "Starter / Business Site", 
-    price: "$500–$900", 
+    price: "$500", 
     timeline: "1–2 weeks",
     forWho: "Small businesses",
     description: "Comprehensive 3–5 page website with custom layout, contact form, SEO basics, and domain + hosting setup included.",
@@ -67,7 +67,7 @@ const services = [
   { 
     id: "webapp", 
     name: "Web App / Custom Build", 
-    price: "$1,500+", 
+    price: "$1,000", 
     timeline: "3+ weeks",
     forWho: "Startups, internal tools",
     description: "Full-featured React application with authentication, dashboards, API integrations, and scalable architecture built for growth.",
