@@ -53,7 +53,7 @@ const services = [
     timeline: "7 days",
     forWho: "Hobbyists, side hustles, students",
     description: "Perfect 1-page site with intro, products/services, and contact sections. Mobile responsive with simple, clean design. Deployed and live.",
-    features: ["1-page site", "Mobile responsive", "Simple design", "Deployed + live"],
+    features: ["1-page site", "Mobile responsive", "Simple design", "Domain + hosting setup"],
   },
   { 
     id: "business", 
