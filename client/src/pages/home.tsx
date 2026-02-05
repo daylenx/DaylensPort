@@ -106,6 +106,7 @@ export default function Home() {
     defaultValues: {
       name: "",
       email: "",
+      subject: "",
       message: "",
     },
   });
@@ -667,6 +668,22 @@ export default function Home() {
                                   placeholder="Your Email" 
                                   {...field} 
                                   data-testid="input-contact-email"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="subject"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Subject" 
+                                  {...field} 
+                                  data-testid="input-contact-subject"
                                 />
                               </FormControl>
                               <FormMessage />
