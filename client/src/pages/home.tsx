@@ -569,6 +569,29 @@ export default function Home() {
               ))}
             </motion.div>
 
+            <motion.div variants={fadeInUp} className="mt-10">
+              <Card className="overflow-visible bg-primary/5 border-primary/20" data-testid="card-hosting-plan">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h3 className="text-xl font-semibold text-foreground">Hosting & Support Plan</h3>
+                        <Badge variant="secondary" className="text-xs">Monthly</Badge>
+                      </div>
+                      <p className="text-muted-foreground text-sm max-w-2xl">
+                        Separate from the build fee. Includes keeping your site online, fixing bugs, redeployment when something breaks, 
+                        handling domain issues, updating dependencies, small changes, and security patches.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      <span className="text-3xl font-bold text-primary" data-testid="text-hosting-price">$25</span>
+                      <span className="text-muted-foreground">/month</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
             <motion.div variants={fadeInUp} className="text-center mt-10">
               <Button size="lg" asChild data-testid="button-get-started">
                 <a href="#contact">
