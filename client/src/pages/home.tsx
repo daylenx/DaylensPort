@@ -30,6 +30,7 @@ import {
   ArrowRight,
   Download,
   ChevronDown,
+  Instagram,
 } from "lucide-react";
 
 const navItems = [
@@ -259,6 +260,15 @@ export default function Home() {
                 data-testid="link-linkedin-hero"
               >
                 <Linkedin className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/devdaylen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="link-instagram-hero"
+              >
+                <Instagram className="h-6 w-6" />
               </a>
               <a
                 href="mailto:daylen25147@gmail.com"
