@@ -41,8 +41,8 @@ const navItems = [
 ];
 
 const skills = [
-  "React", "TypeScript", "JavaScript", "Firebase", "Node.js", "HTML/CSS",
-  "Tailwind CSS", "Git", "REST APIs", "Responsive Design"
+  "Java", "Python", "C++", "JavaScript", "TypeScript", "React", "React Native",
+  "Firebase", "Node.js", "Swift", "SQL", "Git", "REST APIs"
 ];
 
 const services = [
@@ -85,8 +85,8 @@ const resumeItems = [
   {
     type: "education",
     title: "Bachelor of Science in Computer Science",
-    subtitle: "Florida A&M University • Tallahassee, FL • Spring '25",
-    description: "Strong foundation in software engineering, data structures, algorithms, and modern development practices. Active member of NSBE (National Society of Black Engineers), BDPA (Black Data Processing Associates), and ACM (Association for Computing Machinery).",
+    subtitle: "Florida A&M University, Tallahassee, FL (May 2025)",
+    description: "Google Computer Science Scholarship recipient. Dean's List (3x). Active member of NSBE, BDPA, and FAVES volunteer organization. Student athlete with strong foundation in software engineering, data structures, and algorithms.",
   },
   {
     type: "experience",
@@ -305,24 +305,23 @@ export default function Home() {
                 <div className="space-y-6 text-muted-foreground" data-testid="text-about-content">
                   <p className="text-lg leading-relaxed">
                     I'm a recent Florida A&M University graduate with a Bachelor's in Computer Science
-                    and a strong interest in building practical, user-focused applications.
+                    and a passion for building practical, user-focused applications. I'm a hard worker, 
+                    fast learner, and team player looking to grow in the software development space.
                   </p>
                   <p className="leading-relaxed">
                     I enjoy working on projects that combine clean design with solid engineering,
-                    especially web applications that solve real problems. Most of my experience
-                    comes from hands-on projects where I've designed features, structured data,
-                    and built full applications from the ground up.
+                    especially web and mobile applications that solve real problems. My experience
+                    includes designing end-to-end, data-driven applications and working with modern
+                    tools like React, TypeScript, Firebase, and Swift for iOS development.
                   </p>
                   <p className="leading-relaxed">
-                    I'm especially interested in frontend and full-stack development, and I like
-                    working with modern tools such as React, TypeScript, and Firebase. I care a
-                    lot about writing readable code, thinking through edge cases, and understanding
-                    why a solution works — not just making something function.
+                    During my time at FAMU, I was a student athlete playing football while balancing
+                    academics and staying involved in organizations like NSBE, BDPA, and FAVES. That
+                    experience taught me discipline, time management, and how to perform under pressure.
                   </p>
                   <p className="leading-relaxed">
-                    During my time at FAMU, I was actively involved in NSBE, BDPA, and ACM — communities
-                    that helped me grow both technically and professionally. Outside of coding, you'll
-                    find me watching football or gaming on Xbox.
+                    Outside of coding, you'll find me watching football or gaming on Xbox. I'm always
+                    eager to take on new challenges and continue growing as a developer.
                   </p>
                 </div>
               </motion.div>
