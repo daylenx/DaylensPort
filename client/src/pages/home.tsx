@@ -551,7 +551,7 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
-                      <span className="text-3xl font-bold text-primary" data-testid="text-hosting-price">$25</span>
+                      <span className="text-3xl font-bold text-primary" data-testid="text-hosting-price">$50</span>
                       <span className="text-muted-foreground">/month</span>
                     </div>
                   </div>
