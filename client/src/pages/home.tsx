@@ -517,7 +517,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 pt-4 border-t">
-                    {["React", "TypeScript", "Mobile-First Design", "Freelance Project"].map((tech, index) => (
+                    {["React", "TypeScript", "Mobile First Design", "Freelance Project"].map((tech, index) => (
                       <Badge key={tech} variant="secondary" data-testid={`badge-snc-tech-${index}`}>{tech}</Badge>
                     ))}
                   </div>
