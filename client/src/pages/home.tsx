@@ -44,29 +44,53 @@ const services = [
   { 
     id: "lite", 
     name: "Lite Site", 
-    price: "$200", 
-    timeline: "7 days",
-    forWho: "Hobbyists, side hustles, students",
-    description: "Perfect 1-page site with intro, products/services, and contact sections. Mobile responsive with simple, clean design. Deployed and live.",
-    features: ["1-page site", "Mobile responsive", "Simple design", "Domain + hosting setup"],
+    price: "$250", 
+    timeline: "~7 days",
+    forWho: "Portfolios & simple businesses",
+    description: "Perfect for portfolios and simple businesses that need a clean, professional online presence.",
+    features: ["1-page responsive website", "Custom layout", "Mobile optimization", "Basic SEO", "Domain + hosting setup"],
   },
   { 
     id: "business", 
-    name: "Starter / Business Site", 
-    price: "$500", 
-    timeline: "3–4 weeks",
+    name: "Business Website", 
+    price: "$600", 
+    timeline: "2–4 weeks",
     forWho: "Small businesses",
-    description: "Comprehensive 3–5 page website with custom layout, contact form, SEO basics, and domain + hosting setup included.",
-    features: ["3–5 pages", "Custom layout", "Contact form", "SEO basics", "Domain + hosting setup"],
+    description: "Ideal for small businesses needing dynamic features and a multi-page professional website.",
+    features: ["3–5 pages", "Custom design", "Contact forms", "SEO basics", "Domain + hosting setup", "Simple backend (forms or orders)"],
   },
   { 
     id: "webapp", 
     name: "Web App / Custom Build", 
-    price: "$1,000", 
-    timeline: "4+ weeks",
-    forWho: "Startups, internal tools",
-    description: "Full-featured React application with authentication, dashboards, API integrations, and scalable architecture built for growth.",
-    features: ["React app", "Auth / dashboards", "APIs / backend", "Scalable architecture"],
+    price: "Starting at $1,200", 
+    timeline: "Varies",
+    forWho: "Startups & custom software",
+    description: "For startups and custom software solutions. Custom quote required.",
+    features: ["React frontend", "Backend APIs", "Authentication", "Dashboards", "Database integration", "Scalable architecture"],
+  },
+];
+
+const maintenancePlans = [
+  {
+    id: "basic",
+    name: "Basic Care",
+    price: "$50",
+    forWho: "Static sites only",
+    features: ["Hosting", "SSL certificates", "Uptime monitoring", "Small content updates", "Bug fixes"],
+  },
+  {
+    id: "business-care",
+    name: "Business Care",
+    price: "$100",
+    forWho: "Business websites",
+    features: ["Hosting", "Backend maintenance", "Bug fixes", "Redeployments", "Domain + SSL management", "Small feature updates", "Priority support"],
+  },
+  {
+    id: "app-care",
+    name: "App Care",
+    price: "$150–250",
+    forWho: "Web applications",
+    features: ["Server monitoring", "API maintenance", "Database support", "Feature updates", "Scaling assistance"],
   },
 ];
 
@@ -622,27 +646,40 @@ export default function Home() {
               ))}
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="mt-10">
-              <Card className="overflow-visible bg-primary/5 border-primary/20" data-testid="card-hosting-plan">
-                <CardContent className="pt-6">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="text-xl font-semibold text-foreground">Hosting & Support Plan</h3>
-                        <Badge variant="secondary" className="text-xs">Monthly</Badge>
+            <motion.div variants={fadeInUp} className="mt-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-foreground mb-2" data-testid="text-maintenance-title">Hosting & Maintenance Plans</h3>
+                <p className="text-muted-foreground text-sm">Monthly plans to keep your site running smoothly</p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {maintenancePlans.map((plan) => (
+                  <Card key={plan.id} className="overflow-visible hover-elevate flex flex-col" data-testid={`card-maintenance-${plan.id}`}>
+                    <CardHeader className="pb-4">
+                      <Badge variant="secondary" className="w-fit mb-2 text-xs" data-testid={`badge-maintenance-for-${plan.id}`}>
+                        {plan.forWho}
+                      </Badge>
+                      <CardTitle className="text-xl" data-testid={`text-maintenance-name-${plan.id}`}>{plan.name}</CardTitle>
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <span className="text-3xl font-bold text-primary" data-testid={`text-maintenance-price-${plan.id}`}>{plan.price}</span>
+                        <span className="text-sm text-muted-foreground">/month</span>
                       </div>
-                      <p className="text-muted-foreground text-sm max-w-2xl">
-                        Separate from the build fee. Includes keeping your site online, fixing bugs, redeployment when something breaks, 
-                        handling domain issues, updating dependencies, small changes, and security patches.
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <span className="text-3xl font-bold text-primary" data-testid="text-hosting-price">$50</span>
-                      <span className="text-muted-foreground">/month</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    </CardHeader>
+                    <CardContent className="flex-1">
+                      <ul className="space-y-2">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2 text-sm">
+                            <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-6" data-testid="text-maintenance-note">
+                Business websites and web applications require the Business or App Care plan.
+              </p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="text-center mt-10">
