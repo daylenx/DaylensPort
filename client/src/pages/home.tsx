@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
 import driveIQScreenshot from "@assets/image_1769337265421.png";
+import sweetNCrumblesScreenshot from "@assets/image_1770364053560.png";
 import {
   Menu,
   X,
@@ -17,6 +18,7 @@ import {
   Layers,
   Zap,
   Car,
+  Cake,
   CheckCircle,
   ArrowRight,
   Download,
@@ -353,7 +355,7 @@ export default function Home() {
               <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
             </motion.div>
 
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="space-y-8">
               <Card className="overflow-visible" data-testid="card-project-driveiq">
                 <CardHeader>
                   <div className="flex flex-wrap items-start justify-between gap-4">
@@ -362,8 +364,8 @@ export default function Home() {
                         <Car className="h-8 w-8 text-primary" />
                       </div>
                       <div>
-                        <CardTitle className="text-2xl" data-testid="text-project-title">DriveIQ</CardTitle>
-                        <CardDescription className="text-base" data-testid="text-project-subtitle">Vehicle Maintenance Tracking App</CardDescription>
+                        <CardTitle className="text-2xl" data-testid="text-project-title-driveiq">DriveIQ</CardTitle>
+                        <CardDescription className="text-base" data-testid="text-project-subtitle-driveiq">Vehicle Maintenance Tracking App</CardDescription>
                       </div>
                     </div>
                     <a
@@ -383,7 +385,7 @@ export default function Home() {
                 <CardContent className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-8 items-start">
                     <div className="space-y-4">
-                      <p className="text-muted-foreground text-lg leading-relaxed" data-testid="text-project-description">
+                      <p className="text-muted-foreground text-lg leading-relaxed" data-testid="text-project-description-driveiq">
                         DriveIQ is a vehicle maintenance tracking web application designed to help users
                         stay on top of service schedules and vehicle health without relying on memory or
                         paper records.
@@ -422,7 +424,7 @@ export default function Home() {
                         "Scalable architecture",
                         "Full web application"
                       ].map((feature, index) => (
-                        <div key={feature} className="flex items-center gap-2" data-testid={`text-feature-${index}`}>
+                        <div key={feature} className="flex items-center gap-2" data-testid={`text-driveiq-feature-${index}`}>
                           <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                           <span className="text-sm text-muted-foreground">{feature}</span>
                         </div>
@@ -432,7 +434,91 @@ export default function Home() {
 
                   <div className="flex flex-wrap gap-2 pt-4 border-t">
                     {["React", "TypeScript", "Firebase", "Modern Web Development"].map((tech, index) => (
-                      <Badge key={tech} variant="secondary" data-testid={`badge-tech-${index}`}>{tech}</Badge>
+                      <Badge key={tech} variant="secondary" data-testid={`badge-driveiq-tech-${index}`}>{tech}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-visible" data-testid="card-project-sweetncrumbles">
+                <CardHeader>
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 bg-primary/10 rounded-lg">
+                        <Cake className="h-8 w-8 text-primary" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-2xl" data-testid="text-project-title-snc">Sweet N' Crumbles</CardTitle>
+                        <CardDescription className="text-base" data-testid="text-project-subtitle-snc">Dessert Business Website</CardDescription>
+                      </div>
+                    </div>
+                    <a
+                      href="https://github.com/daylenx/SweetNCrumbles"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid="link-snc-github"
+                    >
+                      <Button variant="outline" className="gap-2">
+                        <Github className="h-4 w-4" />
+                        View on GitHub
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-8 items-start">
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground text-lg leading-relaxed" data-testid="text-project-description-snc">
+                        Sweet N' Crumbles is a mobile-friendly website built for a handcrafted dessert business
+                        specializing in cheesecake stuffed strawberries, dipped strawberries, dessert cups,
+                        and custom party treats.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        The site features a full menu with pricing, an order request system for future and
+                        catering orders, and a clean, inviting design that reflects the brand's personality.
+                        Built with a focus on mobile-first design since most customers browse and order from
+                        their phones.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        This project showcases real-world freelance work — designing, building, and deploying
+                        a complete business website for a client from start to finish.
+                      </p>
+                    </div>
+                    <div className="flex justify-center">
+                      <div className="relative max-w-[280px] rounded-2xl overflow-hidden shadow-xl border border-border">
+                        <img 
+                          src={sweetNCrumblesScreenshot} 
+                          alt="Sweet N' Crumbles Homepage" 
+                          className="w-full h-auto"
+                          data-testid="img-snc-screenshot"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-3">Key Features</h4>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {[
+                        "Mobile-first responsive design",
+                        "Full menu with pricing",
+                        "Order request system",
+                        "Catering & party order support",
+                        "Future order scheduling",
+                        "Clean, branded UI"
+                      ].map((feature, index) => (
+                        <div key={feature} className="flex items-center gap-2" data-testid={`text-snc-feature-${index}`}>
+                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                          <span className="text-sm text-muted-foreground">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-4 border-t">
+                    {["React", "TypeScript", "Mobile-First Design", "Freelance Project"].map((tech, index) => (
+                      <Badge key={tech} variant="secondary" data-testid={`badge-snc-tech-${index}`}>{tech}</Badge>
                     ))}
                   </div>
                 </CardContent>
