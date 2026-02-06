@@ -1,18 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { contactMessageSchema, type ContactMessage } from "@shared/schema";
 import driveIQScreenshot from "@assets/image_1769337265421.png";
 import {
   Menu,
@@ -32,6 +23,7 @@ import {
   ChevronDown,
   Instagram,
 } from "lucide-react";
+
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -99,41 +91,6 @@ const resumeItems = [
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { toast } = useToast();
-
-  const form = useForm<ContactMessage>({
-    resolver: zodResolver(contactMessageSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactMessage) => {
-      return apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      form.reset();
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: ContactMessage) => {
-    contactMutation.mutate(data);
-  };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -315,8 +272,8 @@ export default function Home() {
               <motion.div variants={fadeInUp}>
                 <div className="space-y-6 text-muted-foreground" data-testid="text-about-content">
                   <p className="text-lg leading-relaxed">
-                    I'm a recent Florida A&M University graduate with a Bachelor's in Computer Science
-                    and a passion for building practical, user-focused applications. I'm a hard worker, 
+                    I graduated from Florida A&M University with a Bachelor's in Computer Science
+                    and have a passion for building practical, user-focused applications. I'm a hard worker, 
                     fast learner, and team player looking to grow in the software development space.
                   </p>
                   <p className="leading-relaxed">
@@ -523,9 +480,9 @@ export default function Home() {
                 Interested in learning more about my background?
               </p>
               <Button variant="outline" size="lg" asChild data-testid="button-download-resume">
-                <a href="#contact">
+                <a href="https://docs.google.com/document/d/1_x4HLHutH19B7zOlNSAW2_vrcOkL2cG-GElVxfQTEDQ/export?format=pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
-                  Request Full Resume
+                  Download Resume
                 </a>
               </Button>
             </motion.div>
@@ -631,100 +588,9 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <motion.div variants={fadeInUp}>
-                <Card className="overflow-visible">
-                  <CardHeader>
-                    <CardTitle data-testid="text-form-title">Send a Message</CardTitle>
-                    <CardDescription data-testid="text-form-subtitle">Fill out the form and I'll get back to you soon.</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Input 
-                                  placeholder="Your Name" 
-                                  {...field} 
-                                  data-testid="input-contact-name"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Input 
-                                  type="email" 
-                                  placeholder="Your Email" 
-                                  {...field} 
-                                  data-testid="input-contact-email"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="subject"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Input 
-                                  placeholder="Subject" 
-                                  {...field} 
-                                  data-testid="input-contact-subject"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="message"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                <Textarea
-                                  placeholder="Your Message"
-                                  rows={5}
-                                  className="resize-none"
-                                  {...field}
-                                  data-testid="input-contact-message"
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <Button
-                          type="submit"
-                          className="w-full"
-                          disabled={contactMutation.isPending}
-                          data-testid="button-submit-contact"
-                        >
-                          {contactMutation.isPending ? "Sending..." : "Send Message"}
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </form>
-                    </Form>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="space-y-6">
-                <Card className="overflow-visible" data-testid="card-contact-email">
+                <Card className="overflow-visible hover-elevate" data-testid="card-contact-email">
                   <CardContent className="pt-6">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-primary/10 rounded-lg">
@@ -743,8 +609,10 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
+              </motion.div>
 
-                <Card className="overflow-visible" data-testid="card-contact-phone">
+              <motion.div variants={fadeInUp}>
+                <Card className="overflow-visible hover-elevate" data-testid="card-contact-phone">
                   <CardContent className="pt-6">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-primary/10 rounded-lg">
@@ -763,8 +631,10 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
+              </motion.div>
 
-                <Card className="overflow-visible" data-testid="card-contact-github">
+              <motion.div variants={fadeInUp}>
+                <Card className="overflow-visible hover-elevate" data-testid="card-contact-github">
                   <CardContent className="pt-6">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-primary/10 rounded-lg">
@@ -785,8 +655,10 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
+              </motion.div>
 
-                <Card className="overflow-visible" data-testid="card-contact-linkedin">
+              <motion.div variants={fadeInUp}>
+                <Card className="overflow-visible hover-elevate" data-testid="card-contact-linkedin">
                   <CardContent className="pt-6">
                     <div className="flex items-center gap-4">
                       <div className="p-3 bg-primary/10 rounded-lg">
