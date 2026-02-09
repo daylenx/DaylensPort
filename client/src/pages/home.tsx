@@ -392,17 +392,6 @@ export default function Home() {
                         <CardDescription className="text-base" data-testid="text-project-subtitle-driveiq">Vehicle Maintenance Tracking App</CardDescription>
                       </div>
                     </div>
-                    <a
-                      href="https://daylensportfolio.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid="link-driveiq-website"
-                    >
-                      <Button variant="outline" className="gap-2">
-                        <ExternalLink className="h-4 w-4" />
-                        Visit Website
-                      </Button>
-                    </a>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
