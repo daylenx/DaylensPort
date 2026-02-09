@@ -393,15 +393,14 @@ export default function Home() {
                       </div>
                     </div>
                     <a
-                      href="https://github.com/daylenx/DriveIQ"
+                      href="https://daylensportfolio.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      data-testid="link-driveiq-github"
+                      data-testid="link-driveiq-website"
                     >
                       <Button variant="outline" className="gap-2">
-                        <Github className="h-4 w-4" />
-                        View on GitHub
                         <ExternalLink className="h-4 w-4" />
+                        Visit Website
                       </Button>
                     </a>
                   </div>
@@ -477,15 +476,14 @@ export default function Home() {
                       </div>
                     </div>
                     <a
-                      href="https://github.com/daylenx/SweetNCrumbles"
+                      href="https://www.sweetncrumbles.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      data-testid="link-snc-github"
+                      data-testid="link-snc-website"
                     >
                       <Button variant="outline" className="gap-2">
-                        <Github className="h-4 w-4" />
-                        View on GitHub
                         <ExternalLink className="h-4 w-4" />
+                        Visit Website
                       </Button>
                     </a>
                   </div>
