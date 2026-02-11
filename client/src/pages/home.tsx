@@ -731,11 +731,11 @@ export default function Home() {
                       <div>
                         <p className="text-sm text-muted-foreground">Phone</p>
                         <a
-                          href="tel:3178097510"
+                          href="tel:3175631497"
                           className="font-medium text-foreground hover:text-primary transition-colors"
                           data-testid="link-phone-contact"
                         >
-                          (317) 809-7510
+                          (317) 563-1497
                         </a>
                       </div>
                     </div>
