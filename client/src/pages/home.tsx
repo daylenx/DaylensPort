@@ -57,7 +57,7 @@ const services = [
     timeline: "2–4 weeks",
     forWho: "Small businesses",
     description: "Ideal for small businesses needing dynamic features and a multi-page professional website.",
-    features: ["3–5 pages", "Custom design", "Contact forms", "SEO basics", "Domain + hosting setup", "Simple backend (forms or orders)"],
+    features: ["3–5 pages", "Custom design", "Contact forms", "SEO basics", "Domain + hosting setup", "Simple backend (forms or orders)", "Copywriting"],
   },
   { 
     id: "webapp", 
@@ -66,7 +66,7 @@ const services = [
     timeline: "Varies",
     forWho: "Startups & custom software",
     description: "For startups and custom software solutions. Custom quote required.",
-    features: ["React frontend", "Backend APIs", "Authentication", "Dashboards", "Database integration", "Scalable architecture"],
+    features: ["React frontend", "Backend APIs", "Authentication", "Dashboards", "Database integration", "Scalable architecture", "Copywriting"],
   },
 ];
 
@@ -602,6 +602,9 @@ export default function Home() {
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto" data-testid="text-services-subtitle">
                 Looking to build a custom website? I offer professional web development services
                 tailored to your needs.
+              </p>
+              <p className="text-sm text-muted-foreground mt-2" data-testid="text-copywriting-note">
+                Need copywriting only? Contact me for a custom quote.
               </p>
             </motion.div>
 
