@@ -92,6 +92,7 @@ const maintenancePlans = [
   },
   {
     id: "app-care",
+    link: "https://square.link/u/7hkedbaU",
     name: "App Care",
     price: "$150–250",
     forWho: "Web applications",
