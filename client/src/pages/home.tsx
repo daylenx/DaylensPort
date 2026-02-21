@@ -69,6 +69,7 @@ const services = [
     forWho: "Startups & custom software",
     description: "For startups and custom software solutions. Custom quote required.",
     features: ["React frontend", "Backend APIs", "Authentication", "Dashboards", "Database integration", "Scalable architecture", "Copywriting"],
+    link: "https://square.link/u/6jLkNuxl",
   },
 ];
 
