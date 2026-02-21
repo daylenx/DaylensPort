@@ -209,7 +209,7 @@ export default function Home() {
               Available for new projects
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" data-testid="text-hero-title">
-              Hi, I'm <span className="text-primary">Daylen Hall</span>
+              Hi, I'm <span className="text-primary">Daylen</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8" data-testid="text-hero-subtitle">
               Software Developer specializing in building practical, user-focused web applications
