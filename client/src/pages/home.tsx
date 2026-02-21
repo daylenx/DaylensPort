@@ -389,7 +389,7 @@ export default function Home() {
                       </div>
                       <div>
                         <CardTitle className="text-2xl" data-testid="text-project-title-driveiq">DriveIQ</CardTitle>
-                        <CardDescription className="text-base" data-testid="text-project-subtitle-driveiq">Vehicle Maintenance Tracking App</CardDescription>
+                        <CardDescription className="text-base" data-testid="text-project-subtitle-driveiq">Vehicle Maintenance Tracking App · Custom Build</CardDescription>
                       </div>
                     </div>
                   </div>
@@ -461,7 +461,7 @@ export default function Home() {
                       </div>
                       <div>
                         <CardTitle className="text-2xl" data-testid="text-project-title-snc">Sweet N' Crumbles</CardTitle>
-                        <CardDescription className="text-base" data-testid="text-project-subtitle-snc">Dessert Business Website</CardDescription>
+                        <CardDescription className="text-base" data-testid="text-project-subtitle-snc">Dessert Business Website · Lite Site</CardDescription>
                       </div>
                     </div>
                     <a
