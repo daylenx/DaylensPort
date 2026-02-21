@@ -80,6 +80,7 @@ const maintenancePlans = [
     price: "$50",
     forWho: "Static sites only",
     features: ["Hosting", "SSL certificates", "Uptime monitoring", "Small content updates", "Bug fixes"],
+    link: "https://square.link/u/FVDOonSu",
   },
   {
     id: "business-care",
@@ -679,6 +680,19 @@ export default function Home() {
                           </li>
                         ))}
                       </ul>
+                      {plan.link && (
+                        <a
+                          href={plan.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-testid={`link-maintenance-buy-${plan.id}`}
+                        >
+                          <Button className="w-full mt-4 gap-2">
+                            <ExternalLink className="h-4 w-4" />
+                            Get Started
+                          </Button>
+                        </a>
+                      )}
                     </CardContent>
                   </Card>
                 ))}
