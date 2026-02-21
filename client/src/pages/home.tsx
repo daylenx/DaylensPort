@@ -59,6 +59,7 @@ const services = [
     forWho: "Small businesses",
     description: "Ideal for small businesses needing dynamic features and a multi-page professional website.",
     features: ["3–5 pages", "Custom design", "Contact forms", "SEO basics", "Domain + hosting setup", "Simple backend (forms or orders)", "Copywriting"],
+    link: "https://square.link/u/6jLkNuxl",
   },
   { 
     id: "webapp", 
