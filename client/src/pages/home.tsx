@@ -49,6 +49,7 @@ const services = [
     forWho: "Portfolios & simple businesses",
     description: "Perfect for portfolios and simple businesses that need a clean, professional online presence.",
     features: ["1-page responsive website", "Custom layout", "Mobile optimization", "Basic SEO", "Domain + hosting setup"],
+    link: "https://square.link/u/kogWQGB8",
   },
   { 
     id: "business", 
@@ -631,6 +632,19 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
+                    {service.link && (
+                      <a
+                        href={service.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`link-service-buy-${service.id}`}
+                      >
+                        <Button className="w-full mt-4 gap-2">
+                          <ExternalLink className="h-4 w-4" />
+                          Get Started
+                        </Button>
+                      </a>
+                    )}
                   </CardContent>
                 </Card>
               ))}
