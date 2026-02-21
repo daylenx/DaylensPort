@@ -87,7 +87,7 @@ const maintenancePlans = [
     name: "Business Care",
     price: "$100",
     forWho: "Business websites",
-    link: "https://square.link/u/FVDOonSu",
+    link: "https://square.link/u/7hkedbaU",
     features: ["Hosting", "Backend maintenance", "Bug fixes", "Redeployments", "Domain + SSL management", "Small feature updates", "Priority support"],
   },
   {
