@@ -73,32 +73,6 @@ const services = [
   },
 ];
 
-const maintenancePlans = [
-  {
-    id: "basic",
-    name: "Basic Care",
-    price: "$50",
-    forWho: "Static sites only",
-    features: ["Hosting", "SSL certificates", "Uptime monitoring", "Small content updates", "Bug fixes"],
-    link: "https://square.link/u/FVDOonSu",
-  },
-  {
-    id: "business-care",
-    name: "Business Care",
-    price: "$100",
-    forWho: "Business websites",
-    link: "https://square.link/u/7hkedbaU",
-    features: ["Hosting", "Backend maintenance", "Bug fixes", "Redeployments", "Domain + SSL management", "Small feature updates", "Priority support"],
-  },
-  {
-    id: "app-care",
-    link: "https://square.link/u/7hkedbaU",
-    name: "App Care",
-    price: "$150–250",
-    forWho: "Web applications",
-    features: ["Server monitoring", "API maintenance", "Database support", "Feature updates", "Scaling assistance"],
-  },
-];
 
 const resumeItems = [
   {
@@ -671,48 +645,15 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-foreground mb-2" data-testid="text-maintenance-title">Hosting & Maintenance Plans</h3>
                 <p className="text-muted-foreground text-sm">Monthly plans to keep your site running smoothly</p>
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
-                {maintenancePlans.map((plan) => (
-                  <Card key={plan.id} className="overflow-visible hover-elevate flex flex-col" data-testid={`card-maintenance-${plan.id}`}>
-                    <CardHeader className="pb-4">
-                      <Badge variant="secondary" className="w-fit mb-2 text-xs" data-testid={`badge-maintenance-for-${plan.id}`}>
-                        {plan.forWho}
-                      </Badge>
-                      <CardTitle className="text-xl" data-testid={`text-maintenance-name-${plan.id}`}>{plan.name}</CardTitle>
-                      <div className="flex items-baseline gap-2 flex-wrap">
-                        <span className="text-3xl font-bold text-primary" data-testid={`text-maintenance-price-${plan.id}`}>{plan.price}</span>
-                        <span className="text-sm text-muted-foreground">/month</span>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="flex-1">
-                      <ul className="space-y-2">
-                        {plan.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-2 text-sm">
-                            <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                            <span className="text-muted-foreground">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      {plan.link && (
-                        <a
-                          href={plan.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          data-testid={`link-maintenance-buy-${plan.id}`}
-                        >
-                          <Button className="w-full mt-4 gap-2">
-                            <ExternalLink className="h-4 w-4" />
-                            Get Started
-                          </Button>
-                        </a>
-                      )}
-                    </CardContent>
-                  </Card>
-                ))}
+              <div data-testid="stripe-maintenance-pricing">
+                {/* @ts-ignore */}
+                <stripe-pricing-table
+                  pricing-table-id="prctbl_1T7nu8RxG50BSNReTMwtvVws"
+                  publishable-key="pk_live_51SzRgFRxG50BSNRel8Did3YfYjMGVuawMeHo3sanQBhV1RMfQUbe36mFx7RELdX4dTgDrlZqlCVRCxtFIbRJRT5f00jS5k85gx"
+                >
+                {/* @ts-ignore */}
+                </stripe-pricing-table>
               </div>
-              <p className="text-center text-sm text-muted-foreground mt-6" data-testid="text-maintenance-note">
-                Business websites and web applications require the Business or App Care plan.
-              </p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="text-center mt-10">
