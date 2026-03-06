@@ -40,38 +40,6 @@ const skills = [
   "Firebase", "Node.js", "Swift", "SQL", "Git", "REST APIs"
 ];
 
-const services = [
-  { 
-    id: "lite", 
-    name: "Lite Site", 
-    price: "$250", 
-    timeline: "~7 days",
-    forWho: "Portfolios & simple businesses",
-    description: "Perfect for portfolios and simple businesses that need a clean, professional online presence.",
-    features: ["1-page responsive website", "Custom layout", "Mobile optimization", "Basic SEO", "Domain + hosting setup"],
-    link: "https://square.link/u/kogWQGB8",
-  },
-  { 
-    id: "business", 
-    name: "Business Website", 
-    price: "$600", 
-    timeline: "2–4 weeks",
-    forWho: "Small businesses",
-    description: "Ideal for small businesses needing dynamic features and a multi-page professional website.",
-    features: ["3–5 pages", "Custom design", "Contact forms", "SEO basics", "Domain + hosting setup", "Simple backend (forms or orders)", "Copywriting"],
-    link: "https://square.link/u/6jLkNuxl",
-  },
-  { 
-    id: "webapp", 
-    name: "Web App / Custom Build", 
-    price: "Starting at $1,200", 
-    timeline: "Varies",
-    forWho: "Startups & custom software",
-    description: "For startups and custom software solutions. Custom quote required.",
-    features: ["React frontend", "Backend APIs", "Authentication", "Dashboards", "Database integration", "Scalable architecture", "Copywriting"],
-    link: "https://square.link/u/6jLkNuxl",
-  },
-];
 
 
 const resumeItems = [
@@ -599,45 +567,16 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
-              {services.map((service) => (
-                <Card key={service.id} className="overflow-visible hover-elevate flex flex-col" data-testid={`card-service-${service.id}`}>
-                  <CardHeader className="pb-4">
-                    <Badge variant="secondary" className="w-fit mb-2 text-xs" data-testid={`badge-service-for-${service.id}`}>
-                      {service.forWho}
-                    </Badge>
-                    <CardTitle className="text-xl" data-testid={`text-service-name-${service.id}`}>{service.name}</CardTitle>
-                    <div className="flex items-baseline gap-2 flex-wrap">
-                      <span className="text-3xl font-bold text-primary" data-testid={`text-service-price-${service.id}`}>{service.price}</span>
-                      <span className="text-sm text-muted-foreground">• {service.timeline}</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-1 space-y-4">
-                    <p className="text-muted-foreground text-sm" data-testid={`text-service-desc-${service.id}`}>{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm">
-                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                          <span className="text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {service.link && (
-                      <a
-                        href={service.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-testid={`link-service-buy-${service.id}`}
-                      >
-                        <Button className="w-full mt-4 gap-2">
-                          <ExternalLink className="h-4 w-4" />
-                          Get Started
-                        </Button>
-                      </a>
-                    )}
-                  </CardContent>
-                </Card>
-              ))}
+            <motion.div variants={fadeInUp}>
+              <div data-testid="stripe-build-pricing">
+                {/* @ts-ignore */}
+                <stripe-pricing-table
+                  pricing-table-id="prctbl_1T7nd5RxG50BSNReRKxRVhzi"
+                  publishable-key="pk_live_51SzRgFRxG50BSNRel8Did3YfYjMGVuawMeHo3sanQBhV1RMfQUbe36mFx7RELdX4dTgDrlZqlCVRCxtFIbRJRT5f00jS5k85gx"
+                >
+                {/* @ts-ignore */}
+                </stripe-pricing-table>
+              </div>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-16">
