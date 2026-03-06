@@ -79,7 +79,7 @@ const maintenancePlans = [
     name: "Basic Care",
     price: "$50",
     forWho: "Static sites only",
-    features: ["Hosting", "SSL certificates", "Uptime monitoring", "Small content updates", "Bug fixes"],
+    features: ["Unlimited update requests", "Hosting", "SSL certificates", "Uptime monitoring", "Small content updates", "Bug fixes"],
     link: "https://square.link/u/FVDOonSu",
   },
   {
@@ -88,7 +88,7 @@ const maintenancePlans = [
     price: "$100",
     forWho: "Business websites",
     link: "https://square.link/u/7hkedbaU",
-    features: ["Hosting", "Backend maintenance", "Bug fixes", "Redeployments", "Domain + SSL management", "Small feature updates", "Priority support"],
+    features: ["Unlimited update requests", "Hosting", "Backend maintenance", "Bug fixes", "Redeployments", "Domain + SSL management", "Small feature updates", "Priority support"],
   },
   {
     id: "app-care",
@@ -96,7 +96,7 @@ const maintenancePlans = [
     name: "App Care",
     price: "$150-250",
     forWho: "Web applications",
-    features: ["Server monitoring", "API maintenance", "Database support", "Feature updates", "Scaling assistance"],
+    features: ["Unlimited update requests", "Server monitoring", "API maintenance", "Database support", "Feature updates", "Scaling assistance"],
   },
 ];
 
