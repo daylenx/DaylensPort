@@ -40,7 +40,65 @@ const skills = [
   "Firebase", "Node.js", "Swift", "SQL", "Git", "REST APIs"
 ];
 
+const services = [
+  { 
+    id: "lite", 
+    name: "Lite Site", 
+    price: "$250", 
+    timeline: "~7 days",
+    forWho: "Portfolios & simple businesses",
+    description: "Perfect for portfolios and simple businesses that need a clean, professional online presence.",
+    features: ["1-page responsive website", "Custom layout", "Mobile optimization", "Basic SEO", "Domain + hosting setup"],
+    link: "https://square.link/u/kogWQGB8",
+  },
+  { 
+    id: "business", 
+    name: "Business Website", 
+    price: "$600", 
+    timeline: "2-4 weeks",
+    forWho: "Small businesses",
+    description: "Ideal for small businesses needing dynamic features and a multi-page professional website.",
+    features: ["3-5 pages", "Custom design", "Contact forms", "SEO basics", "Domain + hosting setup", "Simple backend (forms or orders)", "Copywriting"],
+    link: "https://square.link/u/6jLkNuxl",
+  },
+  { 
+    id: "webapp", 
+    name: "Web App / Custom Build", 
+    price: "Starting at $1,200", 
+    timeline: "Varies",
+    forWho: "Startups & custom software",
+    description: "For startups and custom software solutions. Custom quote required.",
+    features: ["React frontend", "Backend APIs", "Authentication", "Dashboards", "Database integration", "Scalable architecture", "Copywriting"],
+    link: "https://square.link/u/6jLkNuxl",
+  },
+];
 
+const maintenancePlans = [
+  {
+    id: "basic",
+    name: "Basic Care",
+    price: "$50",
+    forWho: "Static sites only",
+    features: ["Hosting", "SSL certificates", "Uptime monitoring", "Small content updates", "Bug fixes"],
+    link: "https://square.link/u/FVDOonSu",
+  },
+  {
+    id: "business-care",
+    name: "Business Care",
+    price: "$100",
+    forWho: "Business websites",
+    link: "https://square.link/u/7hkedbaU",
+    features: ["Hosting", "Backend maintenance", "Bug fixes", "Redeployments", "Domain + SSL management", "Small feature updates", "Priority support"],
+  },
+  {
+    id: "app-care",
+    link: "https://square.link/u/7hkedbaU",
+    name: "App Care",
+    price: "$150-250",
+    forWho: "Web applications",
+    features: ["Server monitoring", "API maintenance", "Database support", "Feature updates", "Scaling assistance"],
+  },
+];
 
 const resumeItems = [
   {
@@ -567,16 +625,45 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp}>
-              <div data-testid="stripe-build-pricing">
-                {/* @ts-ignore */}
-                <stripe-pricing-table
-                  pricing-table-id="prctbl_1T7nd5RxG50BSNReRKxRVhzi"
-                  publishable-key="pk_live_51SzRgFRxG50BSNRel8Did3YfYjMGVuawMeHo3sanQBhV1RMfQUbe36mFx7RELdX4dTgDrlZqlCVRCxtFIbRJRT5f00jS5k85gx"
-                >
-                {/* @ts-ignore */}
-                </stripe-pricing-table>
-              </div>
+            <motion.div variants={fadeInUp} className="grid md:grid-cols-3 gap-6">
+              {services.map((service) => (
+                <Card key={service.id} className="overflow-visible hover-elevate flex flex-col" data-testid={`card-service-${service.id}`}>
+                  <CardHeader className="pb-4">
+                    <Badge variant="secondary" className="w-fit mb-2 text-xs" data-testid={`badge-service-for-${service.id}`}>
+                      {service.forWho}
+                    </Badge>
+                    <CardTitle className="text-xl" data-testid={`text-service-name-${service.id}`}>{service.name}</CardTitle>
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span className="text-3xl font-bold text-primary" data-testid={`text-service-price-${service.id}`}>{service.price}</span>
+                      <span className="text-sm text-muted-foreground">• {service.timeline}</span>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex-1 space-y-4">
+                    <p className="text-muted-foreground text-sm" data-testid={`text-service-desc-${service.id}`}>{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm">
+                          <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {service.link && (
+                      <a
+                        href={service.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`link-service-buy-${service.id}`}
+                      >
+                        <Button className="w-full mt-4 gap-2">
+                          <ExternalLink className="h-4 w-4" />
+                          Get Started
+                        </Button>
+                      </a>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
             </motion.div>
 
             <motion.div variants={fadeInUp} className="mt-16">
@@ -584,15 +671,48 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-foreground mb-2" data-testid="text-maintenance-title">Hosting & Maintenance Plans</h3>
                 <p className="text-muted-foreground text-sm">Monthly plans to keep your site running smoothly</p>
               </div>
-              <div data-testid="stripe-maintenance-pricing">
-                {/* @ts-ignore */}
-                <stripe-pricing-table
-                  pricing-table-id="prctbl_1T7nu8RxG50BSNReTMwtvVws"
-                  publishable-key="pk_live_51SzRgFRxG50BSNRel8Did3YfYjMGVuawMeHo3sanQBhV1RMfQUbe36mFx7RELdX4dTgDrlZqlCVRCxtFIbRJRT5f00jS5k85gx"
-                >
-                {/* @ts-ignore */}
-                </stripe-pricing-table>
+              <div className="grid md:grid-cols-3 gap-6">
+                {maintenancePlans.map((plan) => (
+                  <Card key={plan.id} className="overflow-visible hover-elevate flex flex-col" data-testid={`card-maintenance-${plan.id}`}>
+                    <CardHeader className="pb-4">
+                      <Badge variant="secondary" className="w-fit mb-2 text-xs" data-testid={`badge-maintenance-for-${plan.id}`}>
+                        {plan.forWho}
+                      </Badge>
+                      <CardTitle className="text-xl" data-testid={`text-maintenance-name-${plan.id}`}>{plan.name}</CardTitle>
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <span className="text-3xl font-bold text-primary" data-testid={`text-maintenance-price-${plan.id}`}>{plan.price}</span>
+                        <span className="text-sm text-muted-foreground">/month</span>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="flex-1">
+                      <ul className="space-y-2">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2 text-sm">
+                            <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {plan.link && (
+                        <a
+                          href={plan.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-testid={`link-maintenance-buy-${plan.id}`}
+                        >
+                          <Button className="w-full mt-4 gap-2">
+                            <ExternalLink className="h-4 w-4" />
+                            Get Started
+                          </Button>
+                        </a>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
+              <p className="text-center text-sm text-muted-foreground mt-6" data-testid="text-maintenance-note">
+                Business websites and web applications require the Business or App Care plan.
+              </p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="text-center mt-10">
