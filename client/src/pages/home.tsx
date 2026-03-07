@@ -49,7 +49,7 @@ const services = [
     forWho: "Portfolios & simple businesses",
     description: "Perfect for portfolios and simple businesses that need a clean, professional online presence.",
     features: ["1-page responsive website", "Custom layout", "Mobile optimization", "Basic SEO", "Domain + hosting setup"],
-    link: "https://square.link/u/kogWQGB8",
+    link: "https://buy.stripe.com/dRm8wR793atM6XqcbA93y03",
   },
   { 
     id: "business", 
