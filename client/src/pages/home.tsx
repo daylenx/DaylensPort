@@ -87,7 +87,7 @@ const maintenancePlans = [
     name: "Business Care",
     price: "$100",
     forWho: "Business websites",
-    link: "https://square.link/u/7hkedbaU",
+    link: "https://buy.stripe.com/00wcN7793gSachKgrQ93y01",
     features: ["Unlimited update requests", "Hosting", "Backend maintenance", "Bug fixes", "Redeployments", "Domain + SSL management", "Small feature updates", "Priority support"],
   },
   {
