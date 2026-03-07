@@ -80,7 +80,7 @@ const maintenancePlans = [
     price: "$50",
     forWho: "Static sites only",
     features: ["Unlimited update requests", "Hosting", "SSL certificates", "Uptime monitoring", "Small content updates", "Bug fixes"],
-    link: "https://square.link/u/FVDOonSu",
+    link: "https://buy.stripe.com/00w4gBctn45o3Lea3s93y00",
   },
   {
     id: "business-care",
